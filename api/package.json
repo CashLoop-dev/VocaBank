@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api",
+    "test": "mocha --timeout 10000"
+  },
+  "author": "Ednut",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "generate-password": "^1.5.1",
+    "mocha": "^11.1.0",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "sqlite3": "^5.0.0",
+    "twilio": "^5.5.1",
+    "uuid": "^9.0.1"
+  },
+  "keywords": [],
+  "license": "ISC"
+}
