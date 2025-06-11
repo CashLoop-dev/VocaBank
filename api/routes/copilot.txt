@@ -1,0 +1,60 @@
+root ➜ /workspaces/tg/api-card $ npm test
+
+> api@1.0.0 test
+> mocha --timeout 10000
+
+
+
+  App.js
+    test the APP routes
+      ✔ test /voice/ : should return 401 or error
+      ✔ test /get/ : should return 401 or error
+      ✔ test /sms/ : should return 401 or error
+      ✔ test /status/ : should return 401 or error
+      ✔ test /stream/fakeservice : should return 404 or error
+      ✔ test /call/ : should return 401 or error
+
+  Authentification.js
+    /get POST to check authentification.js middleware
+      ✔ should return error for missing password
+      ✔ should return error for empty password
+      ✔ should return error for invalid password
+      ✔ should succeed for valid password
+
+  Call.js
+    /call POST
+      ✔ should return error for missing post data
+      ✔ should return error for missing fields
+      ✔ should return error for missing service
+      ✔ should return error for unrecognized service
+      ✔ should return error for bad phone number
+      ✔ should return callSid for valid request (272ms)
+
+  Config.js
+    twilio INFORMATIONS
+      ✔ should have valid Twilio credentials
+    api INFORMATIONS
+      ✔ should have a secure API password
+    services FILEPATH
+      ✔ should have valid file paths for all services
+
+  Get.js
+    /get POST
+      1) "before each" hook for "should return error for missing callSid"
+
+  Voice.js
+    /voice POST
+      2) "before each" hook for "should return error for missing callSid"
+
+
+  19 passing (435ms)
+  2 failing
+
+  1) Get.js
+       "before each" hook for "should return error for missing callSid":
+     Error: SQLITE_ERROR: table calls has no column named card_number
+  
+
+  2) Voice.js
+       "before each" hook for "should return error for missing callSid":
+     Error: SQLITE_ERROR: table calls has no column named card_stage
